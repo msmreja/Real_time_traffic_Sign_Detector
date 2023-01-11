@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Traffic Detection</title>
+    <link rel="stylesheet" type="text/css" href="../static/index.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+
+    ></script>
+    <script type="text/javascript" src="../static/index.js"></script>
+  </head>
+  <body>
+    <div class="App">
+      <header class="App-header">
+        <p><u> Traffic Sign Detector </u></p>
+        <button name="cam" class="button" id="opencam">Video Cam</button>
+        <br/>
+        <hr class="line" />
+        <form>
+          <input
+            id="imageinput"
+            type="file"
+            name="image"
+            onchange="readUrl(this)"
+          />
+        </form>
+        <button name="send"  class="button" id="sendbutton">Detect Image/Video</button>
+        <br/>
+        <div id="link">
+          <video id="myVideo" controls></video>
+
+          <script>
+            const videoElement = document.getElementById('myVideo');
+            fetch('C:\\Mini_Project\\yolov5\\static\\pathh.txt')
+              .then(response => response.text())
+              .then(text => {
+                videoElement.src = text;
+              console.log(text)
+              });
+          </script>
+        </div>
+      </header>
+    </div>
+  </body>
+</html>
